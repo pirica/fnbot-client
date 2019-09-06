@@ -2,6 +2,11 @@
 
 FNBot is a Fortnite bot that can show every skin and emote in the lobby. It is written in Node.js using the [epicgames-fortnite-client](https://epicgames-client.kysune.me/) library.
 
+#### Discord
+https://discord.gg/WWSTpbb
+> Note that the server is new so probably there won't be that many people on it.
+
+
 ## Features
 - Set the bots skin and emote to everything you'd like
 - Up to 15 people can join the bots lobby
@@ -26,6 +31,7 @@ If you want to host the server, follow the guide at [the servers repository](htt
 5. Done. Now you can join the bots lobby and set its cosmetics. For a list of available commands, see [Commands](#Commands)
 
 ## Commands
+> This commands will only work in direct messages, not in party chat.
 
 #### Items
 - `emote <name/ID>` - Sets the bots emote. `value` can be either the ID or the name of the emote you'd like to display
