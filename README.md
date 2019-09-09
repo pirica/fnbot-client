@@ -16,7 +16,7 @@ https://discord.gg/WWSTpbb
 - Simple installation (no need to install Node.js nor dependencies)
 
 ## Installation
-> IMPORTANT: The setup of the server requires you to enter a server url. By default, it is https://fnserver.terax235.com. Currently, the server is offline, so please use https://fnbot-server.glitch.me/ as an alternative instead.
+> IMPORTANT: In the setup process, you'll have to enter a server url. You can either just use the default value (https://fnserver.terax235.com/) or [host an own instance of the cosmetic server](https://github.com/Terax235/fnbot-server/#fnbot-server) (do that only if you have experience with Node.js and build tools)
 
 > It's very simple to install the bot, you don't even need to install Node.js or anything.
 
