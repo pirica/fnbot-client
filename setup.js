@@ -111,21 +111,7 @@ prompt([{
                 default: function () {
                     if (config.server_url) return config.server_url;
                     return "https://fnserver.terax235.com";
-                },
-                validate: async function (input) {
-                    var done = this.async();
-                    if (input.split("")[input.split("").length - 1] == "/") {
-                        input = input.split("").slice(0, input.split("").length - 1).join("");
-                    };
-                    try {
-                        var request = await fetch(input + "/api/status").then(res => res.json());
-                    } catch (err) {
-                        done(null, i18next.t("cosmetic_server.invalid"));
-                        return;
-                    };
-                    console.log("\n" + i18next.t("cosmetic_server.success"))
-                    return await done(null, true);
-                },
+                }
             },
             {
                 type: 'list',
@@ -187,7 +173,15 @@ prompt([{
             if (config.server_url.split("")[config.server_url.split("").length - 1] == "/") {
                 config.server_url = config.server_url.split("").slice(0, config.server_url.split("").length - 1).join("");
             };
-            const build = await fetch(config.server_url + "/api/" + pkgfile.serverVersion + "/build").then(res => res.json());
+            console.log(i18next.t("fetching_build"));
+            var build = await fetch(config.server_url + "/api/" + pkgfile.serverVersion + "/build").then(res => res.json()).catch(async err => {
+                if (config.server_url.toLowerCase().includes("fnserver.terax235.com")) {
+                    config.server_url = "https://fnserver.herokuapp.com";
+                    build = await fetch(config.server_url + "/api/" + pkgfile.serverVersion + "/build").then(res => res.json());
+                    return;
+                };
+                return console.error(i18next.t("fetching_build_err", { err }));
+            });
             config.build = build;
             await fs.writeFile(process.cwd() + "/config.json", JSON.stringify(config), (err) => {
                 if (err) throw err;
