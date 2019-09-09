@@ -182,7 +182,7 @@ prompt([{
                 };
                 return console.error(i18next.t("fetching_build_err", { err }));
             });
-            config.build = build;
+            config.build = build || {};
             await fs.writeFile(process.cwd() + "/config.json", JSON.stringify(config), (err) => {
                 if (err) throw err;
                 console.log("\n" + i18next.t("done") + "\n");
