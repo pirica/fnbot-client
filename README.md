@@ -54,6 +54,3 @@ If you want to host the server, follow the guide at [the servers repository](htt
 - [inquirer](https://www.npmjs.com/package/inquirer)
 - [node-fetch](https://www.npmjs.com/package/node-fetch)
 - [pkg](https://www.npmjs.com/package/pkg) (used to compile application into a single file)
-
-#### Other
-- [benbotfn API](http://benbotfn.tk:8080/api/docs) (used to get encryption keys)
