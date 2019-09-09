@@ -23,5 +23,7 @@
     },
     "accept_friends_msg": "Alle Freundschaftsanfragen annehmen",
     "bot_owner_msg": "Name des Eigentümers des Bots (Gib den Epic Games-Namen des Benutzers ein, der den Bot verwalten darf)",
+    "fetching_build" : "Lade Build-Informationen (dies kann eine Zeit dauern)...",
+    "fetching_build_err" : "Error beim Laden der Build-Informationen: {{err}}",
     "done": "Setup abgeschlossen! Du kannst nun den Bot starten."
 }
