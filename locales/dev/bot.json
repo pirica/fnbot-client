@@ -5,6 +5,7 @@
     "msg_skinchanged": "Successfully changed my skin to {{skin}}.",
     "msg_emotechanged": "Successfully changed my emote to {{emote}}.",
     "msg_bpchanged": "Successfully changed my backpack to {{backpack}}.",
+    "msg_pxchanged": "Successfully changed my pickaxe to {{pickaxe}}.",
     "invite": {
         "error": "Could not invite the user. Make sure that I have them in my friend list.",
         "is_in_party": "User is already in this party.",
