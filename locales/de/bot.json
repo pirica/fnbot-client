@@ -5,6 +5,7 @@
     "msg_skinchanged": "Du hast meinen Skin zu {{skin}} gewechselt.",
     "msg_emotechanged": "Du hast mein Emote zu {{emote}} gewechselt.",
     "msg_bpchanged": "Du hast meinen Rucksack zu {{backpack}} gewechselt.",
+    "msg_pxchanged": "Du hast meine Spitzhacke zu {{pickaxe}} gewechselt.",
     "invite": {
         "error": "Konnte den Nutzer nicht einladen. Stelle sicher, dass er in meiner Freundesliste ist.",
         "is_in_party": "Nutzer ist bereits in dieser Gruppe.",

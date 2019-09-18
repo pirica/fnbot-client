@@ -42,6 +42,9 @@ https://discord.gg/WWSTpbb
 - `kick <name/ID>` - Kicks a user. Bot owner only.
 - `removefriend <name/ID>` - Lets the bot remove one of their friends. Bot owner only.
 
+## Translators
+Special thanks to:
+- [Chicchi7393](https://twitter.com/Chicchi7393) (Discord: `Chicchi7393#0081`) for translating into italian
 
 ## Dependencies
 #### npm

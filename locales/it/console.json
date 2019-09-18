@@ -1,0 +1,22 @@
+{
+    "initiating": "Sto avviando...",
+    "initiating_fail": "Non riesco ad avviare l'Epic Games Launcher. Forse i server di Epic Games sono offline?",
+    "logging_in": {
+        "2fa": "Sto entrando (usando 2FA)...",
+        "no_2fa": "Sto entrando...",
+        "logged_in": "Entrato come {{username}} (ID: {{account_id}})."
+    },
+    "starting_fn": "Sto avviando Fortnite",
+    "prepare_br": "Sto preparando Battaglia Reale",
+    "bot_in_lobby": "Il bot è ora in lobby.",
+    "server_status": {
+        "offline": "Il server dei cosmetici è offline.",
+        "online": "I server sembrano tornati online."
+    },
+    "build_updated": "Il Build Id è cambiato.",
+    "build_updated_restart": "Il Build Id è cambiato. Riavvia il bot per rendere le modifiche effettive",
+
+    "information": "Informazione",
+    "warning": "Attenzione",
+    "ready": "Pronto"
+}
