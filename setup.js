@@ -186,6 +186,7 @@ prompt([{
             await fs.writeFile(process.cwd() + "/config.json", JSON.stringify(config), (err) => {
                 if (err) throw err;
                 console.log("\n" + i18next.t("done") + "\n");
+                require("./index.js");
             });
         });
     });
