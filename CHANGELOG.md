@@ -1,5 +1,13 @@
 # fnbot-client - Changelogs
 
+## Version 1.1.2
+- After running the setup, the bot will now directly start the bot.
+- Added italian translation. Thanks to `Chicchi7393#0081` ([@Chicchi7393](https://twitter.com/Chicchi7393)).
+- i18next will now properly load all locales automatically.
+
+## Version 1.1-hotfix (1.1.1)
+This version includes a little fix for the server url https://fnserver.terax235.com/, changing it to https://fnserver.herokuapp.com/ if it is offline.
+
 ## Version 1.1
 
 ### General
