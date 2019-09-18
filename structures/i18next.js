@@ -1,5 +1,6 @@
 const i18next = require("i18next");
 const Backend = require("i18next-node-fs-backend");
+const fs = require("fs");
 const path = require("path");
 
 class I18N {
@@ -13,7 +14,7 @@ class I18N {
                     addPath: './locales/{{lng}}/{{ns}}.missing.json',
                     jsonIndent: 2,
                 },
-                preload: ['en', 'dev', 'de'],
+                preload: fs.readdirSync("./locales/").filter(d => d !== "dev"),
                 debug: false
             }).then(() => {
                 return resolve(i18next);
