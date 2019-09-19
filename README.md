@@ -33,8 +33,9 @@ https://discord.gg/WWSTpbb
 > This commands will only work in direct messages, not in party chat.
 
 #### Items
-- `emote <name/ID>` - Sets the bots emote. `value` can be either the ID or the name of the emote you'd like to display
-- `skin <name/ID>` - Sets the bots skin. `value` can be either the ID or the name of the skin you'd like to display
+- `backpack <name/ID>` - Sets the bots backpack. `value` can be either the ID or the name of the backpack you'd like to display.
+- `emote <name/ID>` - Sets the bots emote. `value` can be either the ID or the name of the emote you'd like to display.
+- `skin <name/ID>` - Sets the bots skin. `value` can be either the ID or the name of the skin you'd like to display.
 
 #### Moderation
 - `addfriend <name/ID>` - Lets the bot send a friend request to somebody. Bot owner only.
