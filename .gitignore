@@ -87,6 +87,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Visual Studio Code settings
+.vscode/
+
 # Modules and configuration
 config.json
 
