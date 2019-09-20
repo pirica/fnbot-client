@@ -4,7 +4,6 @@ FNBot is a Fortnite bot that can show every skin and emote in the lobby. It is w
 
 #### Discord
 https://discord.gg/WWSTpbb
-> Note that the server is new so probably there won't be that many people on it.
 
 
 ## Features
@@ -16,32 +15,10 @@ https://discord.gg/WWSTpbb
 - Simple installation (no need to install Node.js nor dependencies)
 
 ## Installation
-> IMPORTANT: In the setup process, you'll have to enter a server url. You can either just use the default value (https://fnserver.terax235.com/) or [host an own instance of the cosmetic server](https://github.com/Terax235/fnbot-server/#fnbot-server) (do that only if you have experience with Node.js and build tools)
-
-> It's very simple to install the bot, you don't even need to install Node.js or anything.
-
-1. Go to the [releases](https://github.com/Terax235/fnbot-client/releases/latest) page and download the latest release.
-2. Extract the zip to a new folder.
-3. Open the bot folder in a terminal.
-4. Run the bot using the following command:
-   - Windows users: `./FNBot.exe`
-   - Linux and macos users: `./FNBot`
-   > This will prompt the setup script. You'll now need to enter some information which is required for the bot to work. After that, just run the script again. Then the bot should be able to go online.
-5. Done. Now you can join the bots lobby and set its cosmetics. For a list of available commands, see [Commands](#Commands)
+https://github.com/Terax235/fnbot-client/wiki/Installation
 
 ## Commands
-> This commands will only work in direct messages, not in party chat.
-
-#### Items
-- `backpack <name/ID>` - Sets the bots backpack. `value` can be either the ID or the name of the backpack you'd like to display.
-- `emote <name/ID>` - Sets the bots emote. `value` can be either the ID or the name of the emote you'd like to display.
-- `skin <name/ID>` - Sets the bots skin. `value` can be either the ID or the name of the skin you'd like to display.
-
-#### Moderation
-- `addfriend <name/ID>` - Lets the bot send a friend request to somebody. Bot owner only.
-- `invite <name/ID>` - Invites a friend of the bot to the party. Bot owner only.
-- `kick <name/ID>` - Kicks a user. Bot owner only.
-- `removefriend <name/ID>` - Lets the bot remove one of their friends. Bot owner only.
+https://github.com/Terax235/fnbot-client/wiki/Commands
 
 ## Translators
 Special thanks to:
