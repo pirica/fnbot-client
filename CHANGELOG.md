@@ -1,5 +1,8 @@
 # fnbot-client - Changelogs
 
+## Version 1.1.3
+- Added french translation. Thanks to [xXPsychoPastXx](https://twitter.com/xXPsychoPastXx).
+
 ## Version 1.1.2
 - After running the setup, the bot will now directly start the bot. *This doesn't work with the binaries, only with the source code.*
 - Added italian translation. Thanks to `Chicchi7393#0081` ([@Chicchi7393](https://twitter.com/Chicchi7393)).
