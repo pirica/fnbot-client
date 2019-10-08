@@ -23,6 +23,7 @@ https://github.com/Terax235/fnbot-client/wiki/Commands
 ## Translators
 Special thanks to:
 - [Chicchi7393](https://twitter.com/Chicchi7393) (Discord: `Chicchi7393#0081`) for translating into italian
+- [xXPsychoPastXx](https://twitter.com/xXPsychoPastXx) (Discord: `PsychoPast#0001`) for translating into arabic and french
 
 ## Dependencies
 #### npm
