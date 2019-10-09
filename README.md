@@ -1,32 +1,39 @@
 # FNBot
 
-FNBot is a Fortnite bot that can show every skin and emote in the lobby. It is written in Node.js using the [epicgames-fortnite-client](https://epicgames-client.kysune.me/) library.
+FNBot is a simple to run Fortnite bot that can show all cosmetics you like. It is written in [Node.js](https://nodejs.org/en).
 
-#### Discord
-https://discord.gg/WWSTpbb
+## Discord
 
+Need some help, want to contribute or just want to chat? Feel free to join my [Discord server](https://discord.gg/WWSTpbb)!
 
 ## Features
-- Set the bots skin and emote to everything you'd like
-- Up to 15 people can join the bots lobby
-- Multiple languages supported
-  > There are translations for cosmetics and for bot messages. Currently, there are bot message translations for german. If you'd like to contribute, feel free to DM me on Discord (Terax#0916). If you want to know more about the cosmetic translations, visit the [server repository](https://github.com/Terax235/fnbot-server).
-- Use commands to set cosmetics (You can provide either the name or the ID of the cosmetic).
-- Simple installation (no need to install Node.js nor dependencies)
+
+- Set the bots cosmetics to everything you want by simply providing the cosmetics name or ID.
+- Up to 15 people can join the bots lobby.
+- Multiple languages supported:
+  - You can provide cosmetic names in many different languages (all that Fortnite has at the moment).
+  - Bot messages, console texts etc. can be shown in English, French, German and Italian. [More information here](#Translators)
+- Very simple installation (no need to install Node.js, you can just use the binaries).
 
 ## Installation
-https://github.com/Terax235/fnbot-client/wiki/Installation
+
+[Installation Guide](https://github.com/Terax235/fnbot-client/wiki/Installation)
 
 ## Commands
-https://github.com/Terax235/fnbot-client/wiki/Commands
+
+[Command List](https://github.com/Terax235/fnbot-client/wiki/Commands)
 
 ## Translators
-Special thanks to:
-- [Chicchi7393](https://twitter.com/Chicchi7393) (Discord: `Chicchi7393#0081`) for translating into italian
-- [xXPsychoPastXx](https://twitter.com/xXPsychoPastXx) (Discord: `PsychoPast#0001`) for translating into arabic and french
+
+- French: [@xXPsychoPastXx](https://twitter.com/xXPsychoPastXx)
+- Italian: [@Chicchi7393](https://twitter.com/Chicchi7393)
+
+> If you want to add translations, feel free to [join my Discord](https://discord.gg/WWSTpbb) and contact me (`Terax#0916`).
 
 ## Dependencies
-#### npm
+
+### npm
+
 - [authenticator](https://www.npmjs.com/package/)
 - [epicgames-client](https://www.npmjs.com/package/epicgames-client)
 - [epicgames-fortnite-client](https://www.npmjs.com/package/epicgames-fortnite-client)
@@ -34,4 +41,4 @@ Special thanks to:
 - [i18next-node-fs-backend](https://www.npmjs.com/package/i18next-node-fs-backend)
 - [inquirer](https://www.npmjs.com/package/inquirer)
 - [node-fetch](https://www.npmjs.com/package/node-fetch)
-- [pkg](https://www.npmjs.com/package/pkg) (used to compile application into a single file)
+- [pkg](https://www.npmjs.com/package/pkg) (used to create binaries)
