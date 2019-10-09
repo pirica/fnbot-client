@@ -9,6 +9,9 @@
 - After running the setup, the bot will now directly start the bot. *This doesn't work with the binaries, only with the source code.*
 - Added italian translation. Thanks to [@Chicchi7393](https://twitter.com/Chicchi7393).
 - i18next will now properly load all locales automatically.
+- Temporarily disabled checks for existance of `bot.acceptallfriends` in the config.
+  - This will prevent an issues that causes the bot to force users to redo the setup if they disabled the addallfriends option.
+  - This will be added again with version 1.2, but it'll then be checked if it wasn't set or if it was set to `false`.
 
 ## Version 1.1-hotfix (1.1.1)
 

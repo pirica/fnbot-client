@@ -30,6 +30,19 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
 
 > If you want to add translations, feel free to [join my Discord](https://discord.gg/WWSTpbb) and contact me (`Terax#0916`).
 
+## Planned Features
+
+- Support for changing the pickaxe.
+- Support for other clients than Fortnite
+  - **Discord:** Will allow users to use [commands](https://github.com/Terax235/fnbot-client/wiki/Commands) on Discord using a Discord bot.
+- Bot shutdown / restart
+  - As a command (`shutdown` and `restart`)
+  - Automatically in case that the Fortnite servers are offline.
+- Warnings
+  - Automatically receive warnings from the cosmetic servers.
+  - Warnings can be used to announce maintenance, to inform about commands / features not working, and more.
+- Support for inviting the bot in own parties
+
 ## Dependencies
 
 ### npm
