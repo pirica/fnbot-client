@@ -33,6 +33,7 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
 ## Planned Features
 
 - Support for changing the pickaxe.
+- Support for item variants (styles for skins, backpacks etc.)
 - Support for other clients than Fortnite
   - **Discord:** Will allow users to use [commands](https://github.com/Terax235/fnbot-client/wiki/Commands) on Discord using a Discord bot.
 - Bot shutdown / restart
