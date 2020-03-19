@@ -6,15 +6,15 @@
     "main": "index.js",
     "dependencies": {
         "authenticator": "^1.1.5",
-        "epicgames-client": "^2.0.21",
-        "epicgames-fortnite-client": "^2.0.17",
+        "epicgames-client": "^2.0.22",
+        "epicgames-fortnite-client": "^2.0.18",
         "i18next": "^17.3.1",
         "i18next-node-fs-backend": "^2.1.3",
-        "inquirer": "^7.0.4",
+        "inquirer": "^7.1.0",
         "node-fetch": "^2.6.0"
     },
     "devDependencies": {
-        "pkg": "^4.4.2"
+        "pkg": "^4.4.4"
     },
     "scripts": {
         "run": "node index.js",
