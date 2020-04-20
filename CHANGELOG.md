@@ -1,5 +1,20 @@
 # fnbot-client - Changelogs
 
+## Version 1.2
+
+- ESLint added (code formatting)
+- Fixed login issues
+- Added option to allow users to invite the bot (not secure, everyone is able to invite the bot)
+- Removed party privacy options (planning to readd them in the future)
+- Removed 2fa token options (the new browser login will give you an option to provide a 2fa code manually)
+
+> Note: I'm working on a new version, with many new features. It will take some time, but that will update the whole source code.
+
+## Version 1.1.4
+
+- Added arabic translation. Thanks to `Saeed#1697`
+- Fixed login issues
+
 ## Version 1.1.3
 
 - Added french translation. Thanks to [@xXPsychoPastXx](https://twitter.com/xXPsychoPastXx).

@@ -95,3 +95,6 @@ config.json
 
 # Build data
 build/
+
+# EG Store cache
+.egstore/

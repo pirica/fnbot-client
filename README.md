@@ -4,7 +4,7 @@ FNBot is a simple to run Fortnite bot that can show all cosmetics you like. It i
 
 ## Discord
 
-Need some help, want to contribute or just want to chat? Feel free to join my [Discord server](https://discord.gg/WWSTpbb)!
+Need some help, want to contribute or just want to chat? Feel free to join my [Discord server](https://discord.gg/dksmQK7)!
 
 ## Features
 
@@ -12,7 +12,7 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
 - Up to 15 people can join the bots lobby.
 - Multiple languages supported:
   - You can provide cosmetic names in many different languages (all that Fortnite has at the moment).
-  - Bot messages, console texts etc. can be shown in English, French, German and Italian. [More information here](#Translators)
+  - Bot messages, console texts etc. can be shown in Arabic, English, French, German and Italian. [More information here](#Translators)
 - Very simple installation (no need to install Node.js, you can just use the binaries).
 
 ## Installation
@@ -25,10 +25,11 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
 
 ## Translators
 
+- Arabic: `Saeed#1697`
 - French: [@xXPsychoPastXx](https://twitter.com/xXPsychoPastXx)
 - Italian: [@Chicchi7393](https://twitter.com/Chicchi7393)
 
-> If you want to add translations, feel free to [join my Discord](https://discord.gg/WWSTpbb) and contact me (`Terax#0916`).
+> If you want to add translations, feel free to [join my Discord](https://discord.gg/dksmQK7) and contact me (`Terax#0916`).
 
 ## Planned Features
 
@@ -43,16 +44,3 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
   - Automatically receive warnings from the cosmetic servers.
   - Warnings can be used to announce maintenance, to inform about commands / features not working, and more.
 - Support for inviting the bot in own parties
-
-## Dependencies
-
-### npm
-
-- [authenticator](https://www.npmjs.com/package/)
-- [epicgames-client](https://www.npmjs.com/package/epicgames-client)
-- [epicgames-fortnite-client](https://www.npmjs.com/package/epicgames-fortnite-client)
-- [i18next](https://www.npmjs.com/package/i18next)
-- [i18next-node-fs-backend](https://www.npmjs.com/package/i18next-node-fs-backend)
-- [inquirer](https://www.npmjs.com/package/inquirer)
-- [node-fetch](https://www.npmjs.com/package/node-fetch)
-- [pkg](https://www.npmjs.com/package/pkg) (used to create binaries)

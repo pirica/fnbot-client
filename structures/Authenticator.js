@@ -1,9 +1,9 @@
-const authenticator = require("authenticator");
+const authenticator = require('authenticator')
 
 class Authenticator {
-    static GetAuthToken(key) {
-        return authenticator.generateToken(key);
-    };
+  static GetAuthToken (key) {
+    return authenticator.generateToken(key)
+  };
 };
 
-module.exports = Authenticator;
+module.exports = Authenticator

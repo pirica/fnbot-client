@@ -4,6 +4,7 @@
         "msg": "Le token 2FA du compte de ton bot (si ce dernier � la 2FA activ�, sinon passe cette �tape)"
     },
     "accept_friends_msg": "Accepter toutes les demandes d'amis",
+    "allow_invites_msg": "Allow to invite the bot",
     "bot_owner_msg": "Le nom du propri�taire du bot (donne le Epic Games username de l'utilisateur qui va �tre en mesure de controler le bot)",
     "cosmetic_server": {
         "invalid": "Serveur Invalide.",
