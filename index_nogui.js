@@ -11,7 +11,7 @@ const I18NPromise = new I18N()
 const commands = {}
 
 // Load commands
-fs.readdir(process.cwd() + '/commands/', (err, files) => {
+fs.readdir(path.join(__dirname, './commands/'), (err, files) => {
   if (err) { throw err };
   files.forEach(file => {
     const f = require(path.join(__dirname, `./commands/${file}`))

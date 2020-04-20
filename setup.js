@@ -38,8 +38,15 @@ prompt([{
   prefix: '',
   suffix: '',
   choices: async function () {
-    const locales = await fs.readdirSync('./locales/')
-    return locales.filter(l => l !== 'dev')
+    try {
+      const locales = await fs.readdirSync('./locales/')
+      return locales.filter(l => l !== 'dev')
+    } catch (err) {
+      console.log('[Error] Could not load locales. Seems like the locales directory is missing.')
+      setTimeout(async () => {
+        process.exit(1)
+      }, 10000)
+    };
   }
 }]).then(answers1 => {
   const i18next = require('i18next')
@@ -142,7 +149,9 @@ prompt([{
       fs.writeFile(process.cwd() + '/config.json', JSON.beautify(config), (err) => {
         if (err) throw err
         console.log('\n' + i18next.t('done') + '\n')
-        require('./index.js')
+        setTimeout(async () => {
+          require('./index.js')
+        }, 5000)
       })
     })
   })
