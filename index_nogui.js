@@ -67,14 +67,16 @@ I18NPromise.then(async i18next => {
             return FR.accept()
           })
         };
-        let botWaved = false
+        let setLoadout = false
         FN.fortnite.communicator.on('party:invitation', async PI => {
           PI.accept()
         })
         FN.fortnite.communicator.on('party:member:joined', async PMD => {
-          if (PMD.id !== FN.client.account.id && !botWaved) {
-            botWaved = true
+          if (!setLoadout) {
             FN.fortnite.party.me.setOutfit('/Game/Athena/Items/Cosmetics/Characters/CID_434_Athena_Commando_F_StealthHonor.CID_434_Athena_Commando_F_StealthHonor')
+            setLoadout = true
+          };
+          if (PMD.id !== FN.client.account.id) {
             setTimeout(() => {
               FN.fortnite.party.me.setEmote('/Game/Athena/Items/Cosmetics/Dances/EID_Wave.EID_Wave')
               setTimeout(() => {
