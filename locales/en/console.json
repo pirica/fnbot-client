@@ -4,6 +4,7 @@
     "logging_in": {
         "2fa": "Logging in (using 2FA)...",
         "no_2fa": "Logging in...",
+        "nogui": "Using no GUI login",
         "logged_in": "Logged in as {{username}} (ID: {{account_id}})."
     },
     "starting_fn": "Starting Fortnite",

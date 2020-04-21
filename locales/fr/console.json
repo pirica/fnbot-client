@@ -7,6 +7,7 @@
   "initiating_fail": "Echec durant l'initiation du Epic Games Launcher. Les serveurs Epic Games Launcher sont hors-ligne ?",
   "logging_in": {
     "2fa": "Connexion (utilisant la 2FA)...",
+    "nogui": "Using no GUI login",
     "logged_in": "Connect� en tant que {{username}} (ID: {{account_id}}).",
     "no_2fa": "Connexion"
   },

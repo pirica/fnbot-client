@@ -3,6 +3,7 @@
     "initiating_fail": "Cannot initialize Epic Games Launcher. Maybe Epic Games servers are offline?",
     "logging_in": {
         "2fa": "Logging in (using 2FA)...",
+        "nogui": "Using no GUI login",
         "no_2fa": "Logging in...",
         "logged_in": "Logged in as {{username}} (ID: {{account_id}})."
     },
