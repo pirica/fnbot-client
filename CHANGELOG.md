@@ -1,5 +1,11 @@
 # fnbot-client - Changelogs
 
+## Version 1.2.1
+
+- Added "Random" parameter for skins, emotes and backpacks. (Example: `skin Random`)
+- Added `autoSitOut` option that will automatically let the bot sit out once all other party members are ready. Will automatically get disabled once the players are in a match
+- Added command `sitout` that simply toggles whether the bot sits out or not
+
 ## Version 1.2
 
 - ESLint added (code formatting)

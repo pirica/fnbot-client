@@ -43,4 +43,4 @@ Need some help, want to contribute or just want to chat? Feel free to join my [D
 - Warnings
   - Automatically receive warnings from the cosmetic servers.
   - Warnings can be used to announce maintenance, to inform about commands / features not working, and more.
-- Support for inviting the bot in own parties
+- Better support for inviting the bot in own parties

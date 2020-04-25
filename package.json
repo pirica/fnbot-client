@@ -1,7 +1,7 @@
 {
     "name": "fnbot-client",
-    "version": "1.2.0",
-    "serverVersion": "v1.1",
+    "version": "1.2.1",
+    "serverVersion": "v1.2",
     "description": "Fortnite lobby bot that is able to equip all skins, emotes and backpacks.",
     "main": "index.js",
     "dependencies": {
