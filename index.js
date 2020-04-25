@@ -2,9 +2,10 @@ const beautify = require('json-beautify')
 const fs = require('fs')
 
 function configValid (cf) {
-  if (!(cf instanceof Object)) { return false };
+  if (typeof cf !== 'object') { return false };
   if (!cf.bot || !cf.bot.login || !cf.bot.login.email || !cf.bot.login.password || !cf.bot.party_privacy || !cf.bot.owner) { return false };
-  if (!cf.server_url || !cf.preferred_language || !cf.build || !(cf.build instanceof Object)) { return false };
+  if (!cf.bot.autoSitOut && cf.bot.autoSitOut !== false) { return false };
+  if (!cf.server_url || !cf.preferred_language || !cf.build || typeof cf.build !== 'object') { return false };
   return true
 };
 
