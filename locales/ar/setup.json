@@ -23,6 +23,7 @@
     },
     "accept_friends_msg": "قبول جميع طلبات الصداقه",
     "allow_invites_msg": "Allow to invite the bot",
+    "auto_sit_out_msg": "Automatically sit out once all party members are ready",
     "bot_owner_msg": "اسم صاحب البوت (اسم صاحب البوت القادر علي استخدام الأوامر)",
     "fetching_build" : "تحميل معلومات البنية...",
     "fetching_build_err" : "حدث خطأ أثناء تحميل معلومات البنية: {{err}}",

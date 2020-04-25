@@ -23,6 +23,7 @@
     },
     "accept_friends_msg": "Accept all friend requests",
     "allow_invites_msg": "Allow to invite the bot",
+    "auto_sit_out_msg": "Automatically sit out once all party members are ready",
     "bot_owner_msg": "Bot owner name (provide the Epic Games name of the account that you want to be able to manage the bot)",
     "fetching_build" : "Loading build information...",
     "fetching_build_err" : "An error occured while loading build information: {{err}}",
