@@ -31,7 +31,7 @@ class Fortnite {
           await clientLoginAdapter.close()
           login = await client.login(null, exchangeCode)
         } catch (error) {
-          if (error.toString().includes('cannot open shared object file')) {
+          if (error.toString().includes('cannot open shared object file') || error.toString().includes('Browser is not downloaded')) {
             console.log('[i] ' + i18next.t('logging_in.nogui', { ns: 'console', lng: options.preferred_language }))
             if (options.bot.login.token_2fa) {
               login = await client.login({ email: options.bot.login.email, password: options.bot.login.password, twoFactorCode: await Authenticator.GetAuthToken(options.bot.login.token_2fa) })
@@ -40,21 +40,13 @@ class Fortnite {
             };
           };
         };
+        if (!login) { return resolve('login_failed') };
         if (options.bot.acceptallfriends) {
           const PendingFriends = await client.getFriendRequests()
           PendingFriends.filter(f => f.direction === 'INBOUND').forEach(friend => friend.accept())
         };
-        if (!login) return resolve('login_failed')
-        console.log('    ' + i18next.t('logging_in.logged_in', {
-          ns: 'console',
-          lng: options.preferred_language,
-          username: client.account.name,
-          account_id: client.account.id
-        }))
-        console.log('[3] ' + i18next.t('starting_fn', {
-          ns: 'console',
-          lng: options.preferred_language
-        }))
+        console.log('    ' + i18next.t('logging_in.logged_in', { ns: 'console', lng: options.preferred_language, username: client.account.name, account_id: client.account.id }))
+        console.log('[3] ' + i18next.t('starting_fn', { ns: 'console', lng: options.preferred_language }))
         fortnite = await client.runGame(FNClient, {
           netCL: options.build.fortnite.netCL,
           partyBuildId: options.build.fortnite.buildID,
