@@ -25,7 +25,7 @@ I18NPromise.then(async i18next => {
     url: config.server_url,
     version: pkgfile.serverVersion
   })
-  if (server instanceof Object && server.error) {
+  if (typeof server === 'object' && server.error) {
     if (server.msg === 'baseurl_missing') {
       console.log(i18next.t('Server.baseurl_missing', {
         ns: 'errors',
@@ -68,12 +68,31 @@ I18NPromise.then(async i18next => {
           })
         };
         let setLoadout = false
+        let isSittingOut = false
         FN.fortnite.communicator.on('party:invitation', async PI => {
           PI.accept()
+          setLoadout = false
+        })
+        FN.fortnite.communicator.on('party:member:state:updated', async (PMS) => {
+          if (!config.bot.autoSitOut) { return };
+          if (isSittingOut) {
+            if (FN.fortnite.party && FN.fortnite.party.members.find(member => member.id !== FN.fortnite.party.me.id && member.meta.schema.Location_s === 'InGame')) {
+              FN.fortnite.party.me.patch({ GameReadiness_s: 'NotReady' })
+              isSittingOut = false
+              return
+            };
+          } else {
+            if (FN.fortnite.party && !FN.fortnite.party.members.find(member => member.id !== FN.fortnite.party.me.id && member.meta.schema.GameReadiness_s === 'NotReady')) {
+              FN.fortnite.party.me.patch({ GameReadiness_s: 'SittingOut' })
+              isSittingOut = true
+              return
+            };
+          };
         })
         FN.fortnite.communicator.on('party:member:joined', async PMD => {
           if (!setLoadout) {
             FN.fortnite.party.me.setOutfit('/Game/Athena/Items/Cosmetics/Characters/CID_434_Athena_Commando_F_StealthHonor.CID_434_Athena_Commando_F_StealthHonor')
+            FN.fortnite.party.me.setBanner(999, 'brs8lvl100', 'defaultcolor22')
             setLoadout = true
           };
           if (PMD.id !== FN.client.account.id) {

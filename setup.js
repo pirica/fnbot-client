@@ -114,6 +114,13 @@ prompt([{
       suffix: '?'
     },
     {
+      type: 'confirm',
+      name: 'auto_sit_out',
+      message: i18next.t('auto_sit_out_msg'),
+      prefix: '-',
+      suffix: '?'
+    },
+    {
       type: 'input',
       name: 'bot_owner',
       message: i18next.t('bot_owner_msg'),
@@ -136,6 +143,7 @@ prompt([{
       config.server_url = answers.server_url
       config.preferred_language = answers1.locale
       config.bot.party_privacy = 'public'
+      config.bot.autoSitOut = answers.auto_sit_out
       config.bot.acceptallfriends = answers.accept_friends
       config.bot.owner = answers.bot_owner
       if (config.server_url.split('')[config.server_url.split('').length - 1] === '/') {
