@@ -2,9 +2,14 @@
 
 FNBot is a simple to run Fortnite bot that can show all cosmetics you like. It is written in [Node.js](https://nodejs.org/en).
 
+## Support me
+If you want to support me, feel free to by using my Support-a-Creator code `terax235` in Fortnite :).
+Every purchase counts and allows me to keep my projects up.
+
 ## Discord
 
 Need some help, want to contribute or just want to chat? Feel free to join my [Discord server](https://discord.gg/dksmQK7)!
+Please do not add me on Fortnite, I will not support you there. If you need help, simply join my Discord server.
 
 ## Features
 
