@@ -33,6 +33,7 @@ Please do not add me on Fortnite, I will not support you there. If you need help
 - Arabic: `Saeed#1697`
 - French: [@xXPsychoPastXx](https://twitter.com/xXPsychoPastXx)
 - Italian: [@Chicchi7393](https://twitter.com/Chicchi7393)
+- Romanian: `Skadro#1659`
 
 > If you want to add translations, feel free to [join my Discord](https://discord.gg/dksmQK7) and contact me (`Terax#0916`).
 
