@@ -17,7 +17,7 @@ Please do not add me on Fortnite, I will not support you there. If you need help
 - Up to 15 people can join the bots lobby.
 - Multiple languages supported:
   - You can provide cosmetic names in many different languages (all that Fortnite has at the moment).
-  - Bot messages, console texts, etc. can be shown in Arabic, English, French, German, and Italian. [More information here](#Translators)
+  - Bot messages, console texts, etc. can be shown in Arabic, English, French, German, Italian, and Romanian. [More information here](#Translators)
 - Very simple installation (no need to install Node.js, you can just use the binaries).
 
 ## Installation
