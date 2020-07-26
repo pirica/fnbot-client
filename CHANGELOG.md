@@ -1,5 +1,9 @@
 # fnbot-client - Changelogs
 
+## Version 1.2.2
+
+- Added romanian translation. Thanks to `Skadro#1659`.
+
 ## Version 1.2.1
 
 - Added "Random" parameter for skins, emotes and backpacks. (Example: `skin Random`)
