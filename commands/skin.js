@@ -1,9 +1,9 @@
 const Server = require('../structures/Server.js')
 const { i18next } = require('../structures/i18next.js')
 
-exports.run = async (FM, args, respond, lng, FN) => {
+exports.run = async (FM, args, reply, lng, FN) => {
   if (!args[0]) {
-    return await respond(FM.friend.id, i18next.t('args_missing', { ns: 'bot', lng }))
+    return await reply(i18next.t('args_missing', { ns: 'bot', lng }))
   };
   let query = args.join(' ')
   let displayName = query
@@ -25,16 +25,16 @@ exports.run = async (FM, args, respond, lng, FN) => {
     };
   };
 
-  await FN.fortnite.party.me.setOutfit('/Game/Athena/Items/Cosmetics/Characters/' + query + '.' + query)
-  FN.fortnite.currentLoadout.skin = query
-  if (setBackpack && !FN.fortnite.currentLoadout.backpack) {
-    await FN.fortnite.party.me.setBackpack('/Game/Athena/Items/Cosmetics/Backpacks/' + setBackpack + '.' + setBackpack)
+  await FN.party.me.setOutfit(query)
+  FN.currentLoadout.skin = query
+  if (setBackpack && !FN.currentLoadout.backpack) {
+    await FN.party.me.setBackpack(setBackpack)
   };
-  if (FN.fortnite.currentLoadout.emote) {
-    await FN.fortnite.party.me.clearEmote()
-    await FN.fortnite.party.me.setEmote('/Game/Athena/Items/Cosmetics/Dances/' + FN.fortnite.currentLoadout.emote + '.' + FN.fortnite.currentLoadout.emote)
+  if (FN.currentLoadout.emote) {
+    await FN.party.me.clearEmote()
+    await FN.party.me.setEmote(FN.currentLoadout.emote)
   };
-  return await respond(FM.friend.id, i18next.t('msg_skinchanged', { ns: 'bot', lng, skin: displayName }))
+  return await reply(i18next.t('msg_skinchanged', { ns: 'bot', lng, skin: displayName }))
 }
 
 exports.ownerOnly = false

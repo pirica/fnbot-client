@@ -1,15 +1,11 @@
 {
     "initiating": "Inițiere...",
     "initiating_fail": "Nu se poate iniția Epic Games Launcher-ul. Poate serverele Epic Games sunt offline?",
-    "logging_in": {
-        "2fa": "Autentificare (folosind 2FA)...",
-        "no_2fa": "Autentificare...",
-        "nogui": "Nu se foloseşte nicio autentificare GUI",
-        "logged_in": "Autentificat ca {{username}} (ID: {{account_id}})."
+    "generating_auth": "A window will now pop up. Login and enter the value of redirectUrl.\nIf you can't use a browser on your platform, you can find help on this projects GitHub.",
+    "login": {
+        "message": "Autentificare...",
+        "success": "Autentificat ca {{username}} (ID: {{account_id}})."
     },
-    "starting_fn": "Pornire Fortnite",
-    "prepare_br": "Pregătire Battle Royale",
-    "bot_in_lobby": "Botul este acum în lobby.",
     "server_status": {
         "offline": "Serverul de cosmetice este offline.",
         "online": "Serverul pare să fie din nou online."

@@ -5,15 +5,13 @@
     "description": "Fortnite lobby bot that is able to equip all skins, emotes and backpacks.",
     "main": "index.js",
     "dependencies": {
-        "authenticator": "^1.1.5",
-        "epicgames-client": "^2.0.25",
-        "epicgames-client-login-adapter": "^0.1.2",
-        "epicgames-fortnite-client": "^2.0.18",
+        "fnbr": "^1.0.2",
         "i18next": "^17.3.1",
         "i18next-node-fs-backend": "^2.1.3",
-        "inquirer": "^7.3.2",
+        "inquirer": "^7.3.3",
         "json-beautify": "^1.1.1",
-        "node-fetch": "^2.6.0"
+        "node-fetch": "^2.6.0",
+        "opn": "^6.0.0"
     },
     "devDependencies": {
         "eslint": "^6.8.0",

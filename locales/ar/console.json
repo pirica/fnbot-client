@@ -1,15 +1,11 @@
 {
     "initiating": "يبداء...",
-    "initiating_fail": "من الممكن ان السيرفرات مغلقه  Epic Games Launcer لا يمكن تهيئه",
-    "logging_in": {
-        "2fa": "تسجيل الدخول (بستخدام 2FA)...",
-        "nogui": "Using no GUI login",
-        "no_2fa": "تسجيل الدخول...",
-        "logged_in": "تم تسجيل الدخول الي  {{username}} (ID: {{account_id}})."
+    "initiating_fail": "من الممكن ان السيرفرات مغلقه  Epic Games Launcher لا يمكن تهيئه",
+    "generating_auth": "A window will now pop up. Login and enter the value of redirectUrl.\nIf you can't use a browser on your platform, you can find help on this projects GitHub.",
+    "login": {
+        "message": "تسجيل الدخول...",
+        "success": "تم تسجيل الدخول الي  {{username}} (ID: {{account_id}})."
     },
-    "starting_fn": "تشغيل فورت نايت ",
-    "prepare_br": "تحضير الباتل رويال",
-    "bot_in_lobby": "البوت متوفر الان .",
     "server_status": {
         "offline": "سيرفر الاسكن غير متوفر في الوقت الحالي",
         "online": "يبدو ان السيرفرات متاحه الان"

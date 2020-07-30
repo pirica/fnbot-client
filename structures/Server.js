@@ -1,13 +1,13 @@
 const fetch = require('node-fetch')
 const { i18next } = require('./i18next.js')
 const config = require(process.cwd() + '/config.json', 'must-exclude')
-var url = ''
-var version = ''
-var isOnline = true
+
+let url = ''
+let version = ''
+let isOnline = true
 
 const ENDPOINTS = {
   status: '/status',
-  build: '/build',
   cosmetic_search: '/cosmetics/search'
 }
 
@@ -49,31 +49,6 @@ class Server {
         };
         return resolve(res)
       })
-    })
-  };
-
-  static checkBuild () {
-    if (!isOnline) {
-      return {
-        server_off: true
-      }
-    }
-    return new Promise(function (resolve, reject) {
-      try {
-        fetch(url + ENDPOINTS.build).then(res => res.json()).catch(err => {
-          if (err) {
-            if (isOnline) {
-              isOnline = false
-              console.log(`[${i18next.t('warning', { ns: 'console', lng: config.preferred_language })}] ${i18next.t('server_status.offline', { ns: 'console', lng: config.preferred_language })}`)
-            };
-            return { server_off: true }
-          };
-        }).then(res => {
-          return resolve(res)
-        })
-      } catch (err) {
-        return reject(err)
-      }
     })
   };
 

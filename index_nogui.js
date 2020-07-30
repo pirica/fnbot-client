@@ -35,111 +35,67 @@ I18NPromise.then(async i18next => {
     };
   };
   server.checkStatus().then(async status => {
-    const Build = await server.checkBuild()
-    if (!Build.server_off && JSON.stringify(Build) !== JSON.stringify(config.build)) {
-      config.build = Build
-      console.log(`[${i18next.t('information', { ns: 'console', lng: config.preferred_language })}] ${i18next.t('build_updated', { ns: 'console', lng: config.preferred_language })}`)
-      require('fs').writeFileSync('./config.json', JSON.beautify(config))
+    const FN = await Fortnite.init(config)
+    let setLoadout = false
+    if (!FN.party.chat.connected) {
+      FN.party.chat.join()
     };
-    const clientPromise = new Fortnite(config, i18next)
-    clientPromise.then(async (FN) => {
-      if (typeof FN === 'string') {
-        if (FN === 'init_failed') {
-          console.log(i18next.t('Fortnite.init_failed', {
-            ns: 'errors',
-            lng: config.preferred_language
-          }))
-          process.exit(1)
+    FN.on('party:member:joined', async PartyMember => {
+      if (!FN.party.chat.connected) {
+        FN.party.chat.join()
+      };
+      if (!setLoadout) {
+        if (config.defaultLoadout) {
+          if (config.defaultLoadout.skin) { FN.party.me.setOutfit(config.defaultLoadout.skin) };
+          if (config.defaultLoadout.backpack) { FN.party.me.setBackpack(config.defaultLoadout.backpack) };
+          if (config.defaultLoadout.emote) { FN.party.me.setEmote(config.defaultLoadout.emote); FN.currentLoadout.emote = config.defaultLoadout.emote };
+          if (config.defaultLoadout.level) { FN.party.me.setLevel(config.defaultLoadout.level) };
+          if (config.defaultLoadout.banner) { FN.party.me.setBanner(config.defaultLoadout.banner.id, config.defaultLoadout.banner.color) };
+        } else {
+          FN.party.me.setOutfit('CID_434_Athena_Commando_F_StealthHonor')
+          FN.party.me.setLevel(999)
+          FN.party.me.setBanner('brs9lvl100', 'defaultcolor22')
         };
-        if (FN === 'login_failed') {
-          console.log(i18next.t('Fortnite.login_failed', {
-            ns: 'errors',
-            lng: config.preferred_language
-          }))
-          process.exit(1)
-        };
-      } else {
-        if (config.bot.acceptallfriends) {
-          FN.client.communicator.on('friend:request', (FR) => {
-            return FR.accept()
-          })
-          FN.fortnite.communicator.on('friend:request', (FR) => {
-            return FR.accept()
-          })
-        };
-        let setLoadout = false
-        let isSittingOut = false
-        FN.fortnite.communicator.on('party:invitation', async PI => {
-          PI.accept()
-          setLoadout = false
-        })
-        FN.fortnite.communicator.on('party:member:state:updated', async (PMS) => {
-          if (!config.bot.autoSitOut) { return };
-          if (isSittingOut) {
-            if (FN.fortnite.party && FN.fortnite.party.members.find(member => member.id !== FN.fortnite.party.me.id && member.meta.schema.Location_s === 'InGame')) {
-              FN.fortnite.party.me.patch({ GameReadiness_s: 'NotReady' })
-              isSittingOut = false
-              return
-            };
-          } else {
-            if (FN.fortnite.party && !FN.fortnite.party.members.find(member => member.id !== FN.fortnite.party.me.id && member.meta.schema.GameReadiness_s === 'NotReady')) {
-              FN.fortnite.party.me.patch({ GameReadiness_s: 'SittingOut' })
-              isSittingOut = true
-              return
-            };
-          };
-        })
-        FN.fortnite.communicator.on('party:member:joined', async PMD => {
-          if (!setLoadout) {
-            FN.fortnite.party.me.setOutfit('/Game/Athena/Items/Cosmetics/Characters/CID_434_Athena_Commando_F_StealthHonor.CID_434_Athena_Commando_F_StealthHonor')
-            FN.fortnite.party.me.setBanner(999, 'brs8lvl100', 'defaultcolor22')
-            setLoadout = true
-          };
-          if (PMD.id !== FN.client.account.id) {
-            setTimeout(() => {
-              FN.fortnite.party.me.setEmote('/Game/Athena/Items/Cosmetics/Dances/EID_Wave.EID_Wave')
-              setTimeout(() => {
-                FN.fortnite.party.me.clearEmote()
-              }, 3000)
-            }, 1000)
-          };
-        })
-        // eslint-disable-next-line no-inner-declarations
-        async function respond (user, msg) {
-          await FN.fortnite.communicator.sendMessage(user, msg)
-        };
-        FN.client.communicator.on('friend:message', async (FM) => {
-          if (!FN.fortnite.party || !FN.fortnite.party.me) return
-          const command = FM.message.split(' ')[0]
-          const args = FM.message.split(' ').slice(1)
-          if (commands[command.toLowerCase()]) {
-            const cmd = commands[command.toLowerCase()]
-            if (cmd.groupOnly && !FN.fortnite.party.members.filter(m => m.id === FM.friend.id)[0]) {
-              return await FN.fortnite.communicator.sendMessage(FM.friend.id, i18next.t('msg_notingroup', {
-                ns: 'bot',
-                lng: config.preferred_language
-              }))
-            }
-            if (cmd.ownerOnly && FM.friend.id !== FN.client.owner.id) {
-              return await FN.fortnite.communicator.sendMessage(FM.friend.id, i18next.t('msg_owneronly', {
-                ns: 'bot',
-                lng: config.preferred_language
-              }))
-            };
-
-            return await cmd.run(FM, args, respond, config.preferred_language, FN)
-          };
-        })
-        setInterval(async () => {
-          await server.checkStatus()
-          const build = await server.checkBuild()
-          if (!build.server_off && JSON.stringify(build) !== JSON.stringify(config.build)) {
-            config.build = build
-            console.log(`[${i18next.t('information', { ns: 'console', lng: config.preferred_language })}] ${i18next.t('build_updated_restart', { ns: 'console', lng: config.preferred_language })}`)
-            require('fs').writeFileSync(process.cwd() + '/config.json', JSON.beautify(config))
-          };
-        }, 1000 * 60)
+        setLoadout = true
+      };
+      if (PartyMember.id !== FN.id && !FN.currentLoadout.emote) {
+        setTimeout(() => {
+          FN.party.me.setEmote('EID_Wave')
+          setTimeout(() => {
+            FN.party.me.clearEmote()
+          }, 3000)
+        }, 1000)
       };
     })
+    FN.on('friend:message', async FriendMessage => {
+      if (!FN.party || !FN.party.me) { return };
+      const command = FriendMessage.content.split(' ')[0]
+      const args = FriendMessage.content.split(' ').slice(1)
+      if (commands[command.toLowerCase()]) {
+        const cmd = commands[command.toLowerCase()]
+        if (cmd.groupOnly && !FN.party.members.find(member => member.id === FriendMessage.author.id)) {
+          return await FriendMessage.reply(i18next.t('msg_notingroup', { ns: 'bot', lng: config.preferred_language }))
+        }
+        if (cmd.ownerOnly && FriendMessage.author.id !== FN.owner.id) {
+          return await FriendMessage.reply(i18next.t('msg_owneronly', { ns: 'bot', lng: config.preferred_language }))
+        };
+        return await cmd.run(FriendMessage, args, (content) => { return FN.sendFriendMessage(FriendMessage.author.id, content) }, config.preferred_language, FN)
+      };
+    })
+    FN.on('party:member:message', async PartyMessage => {
+      if (!FN.party || !FN.party.me) { return };
+      const command = PartyMessage.content.split(' ')[0]
+      const args = PartyMessage.content.split(' ').slice(1)
+      if (commands[command.toLowerCase()]) {
+        const cmd = commands[command.toLowerCase()]
+        if (cmd.ownerOnly && PartyMessage.author.id !== FN.owner.id) {
+          return await FN.party.sendMessage(i18next.t('msg_owneronly', { ns: 'bot', lng: config.preferred_language }))
+        };
+        return await cmd.run(PartyMessage, args, (content) => { FN.party.sendMessage(content) }, config.preferred_language, FN)
+      };
+    })
+    setInterval(async () => {
+      await server.checkStatus()
+    }, 1000 * 60 * 2)
   })
 })

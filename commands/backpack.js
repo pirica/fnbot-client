@@ -1,9 +1,9 @@
 const Server = require('../structures/Server.js')
 const { i18next } = require('../structures/i18next.js')
 
-exports.run = async (FM, args, respond, lng, FN) => {
+exports.run = async (FM, args, reply, lng, FN) => {
   if (!args[0]) {
-    return await respond(FM.friend.id, i18next.t('args_missing', { ns: 'bot', lng }))
+    return await reply(i18next.t('args_missing', { ns: 'bot', lng }))
   };
   let query = args.join(' ')
   let displayName = query
@@ -19,9 +19,9 @@ exports.run = async (FM, args, respond, lng, FN) => {
     };
   };
 
-  await FN.fortnite.party.me.setBackpack('/Game/Athena/Items/Cosmetics/Backpacks/' + query + '.' + query)
-  FN.fortnite.currentLoadout.backpack = query
-  return await respond(FM.friend.id, i18next.t('msg_bpchanged', { ns: 'bot', lng, backpack: displayName }))
+  await FN.party.me.setBackpack(query)
+  FN.currentLoadout.backpack = query
+  return await reply(i18next.t('msg_bpchanged', { ns: 'bot', lng, backpack: displayName }))
 }
 
 exports.ownerOnly = false

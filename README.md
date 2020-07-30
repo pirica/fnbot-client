@@ -20,6 +20,9 @@ Please do not add me on Fortnite, I will not support you there. If you need help
   - Bot messages, console texts, etc. can be shown in Arabic, English, French, German, Italian, and Romanian. [More information here](#Translators)
 - Very simple installation (no need to install Node.js, you can just use the binaries).
 
+## Login
+The first login requires you to use a browser. Follow [this link](https://www.epicgames.com/id/logout?redirectUrl=https%3A//www.epicgames.com/id/login%3FredirectUrl%3Dhttps%253A%252F%252Fwww.epicgames.com%252Fid%252Fapi%252Fredirect%253FclientId%253Dec684b8c687f479fadea3cb2ad83f5c6%2526responseType%253Dcode), login with your bot account, copy the value of `redirectUrl` and paste it to the console. After that, device auth will be used to login.
+
 ## Installation
 
 [Installation Guide](https://github.com/Terax235/fnbot-client/wiki/Installation)

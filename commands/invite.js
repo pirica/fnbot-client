@@ -1,20 +1,20 @@
 const { i18next } = require('../structures/i18next.js')
 
-exports.run = async (FM, args, respond, lng, FN) => {
+exports.run = async (FM, args, reply, lng, FN) => {
   if (!args[0]) {
-    return await respond(FM.friend.id, i18next.t('args_missing', { ns: 'bot', lng }))
+    return await reply(i18next.t('args_missing', { ns: 'bot', lng }))
   };
   const user = args.join(' ')
   try {
-    const Profile = await FN.client.getProfile(user)
-    const Member = await FN.fortnite.party.findMember(Profile.id)
+    const Profile = await FN.getProfile(user)
+    const Member = FN.party.members.find(member => member.id === Profile.id)
     if (Member) {
-      return await respond(FM.friend.id, i18next.t('invite.is_in_party', { ns: 'bot', lng }))
+      return reply(i18next.t('invite.is_in_party', { ns: 'bot', lng }))
     };
-    await FN.fortnite.party.invite(Profile.id)
-    return await respond(FM.friend.id, i18next.t('invite.success', { ns: 'bot', lng, username: `[${Profile.displayName}]` }))
+    await FN.party.invite(Profile.id)
+    return reply(i18next.t('invite.success', { ns: 'bot', lng, username: `[${Profile.displayName}]` }))
   } catch (err) {
-    return await respond(FM.friend.id, i18next.t('invite.error', { ns: 'bot', lng }))
+    return reply(i18next.t('invite.error', { ns: 'bot', lng }))
   };
 }
 

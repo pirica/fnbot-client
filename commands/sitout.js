@@ -1,10 +1,10 @@
-exports.run = async (FM, args, respond, lng, FN) => {
-  if (FN.fortnite && FN.fortnite.party && FN.fortnite.party.me) {
-    if (FN.fortnite.party.me.meta.schema.GameReadiness_s === 'SittingOut') {
-      FN.fortnite.party.me.patch({ GameReadiness_s: 'NotReady' })
+exports.run = async (FM, args, reply, lng, FN) => {
+  if (FN.party && FN.party.me) {
+    if (FN.party.me.meta.schema.GameReadiness_s === 'SittingOut') {
+      FN.party.me.sendPatch({ GameReadiness_s: 'NotReady' })
     };
-    if (FN.fortnite.party.me.meta.schema.GameReadiness_s === 'NotReady') {
-      FN.fortnite.party.me.patch({ GameReadiness_s: 'SittingOut' })
+    if (FN.party.me.meta.schema.GameReadiness_s === 'NotReady') {
+      FN.party.me.sendPatch({ GameReadiness_s: 'SittingOut' })
     };
   };
 }

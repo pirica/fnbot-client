@@ -1,15 +1,11 @@
 {
     "initiating": "Initiating...",
     "initiating_fail": "Cannot initialize Epic Games Launcher. Maybe Epic Games servers are offline?",
-    "logging_in": {
-        "2fa": "Logging in (using 2FA)...",
-        "no_2fa": "Logging in...",
-        "nogui": "Using no GUI login",
-        "logged_in": "Logged in as {{username}} (ID: {{account_id}})."
+    "generating_auth": "A window will now pop up. Login and enter the value of redirectUrl.\nIf you can't use a browser on your platform, you can find help on this projects GitHub.",
+    "login": {
+        "message": "Logging in...",
+        "success": "Logged in as {{username}} (ID: {{account_id}})."
     },
-    "starting_fn": "Starting Fortnite",
-    "prepare_br": "Preparing Battle Royale",
-    "bot_in_lobby": "The bot is now in the lobby.",
     "server_status": {
         "offline": "Cosmetic server is offline.",
         "online": "Server seems to be back online."

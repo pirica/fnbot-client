@@ -1,9 +1,9 @@
 const Server = require('../structures/Server.js')
 const { i18next } = require('../structures/i18next.js')
 
-exports.run = async (FM, args, respond, lng, FN) => {
+exports.run = async (FM, args, reply, lng, FN) => {
   if (!args[0]) {
-    return await respond(FM.friend.id, i18next.t('args_missing', { ns: 'bot', lng }))
+    return await reply(i18next.t('args_missing', { ns: 'bot', lng }))
   };
   let query = args.join(' ')
   let displayName = query
@@ -19,9 +19,9 @@ exports.run = async (FM, args, respond, lng, FN) => {
     };
   };
 
-  await FN.fortnite.party.me.setEmote('/Game/Athena/Items/Cosmetics/Dances/' + query + '.' + query)
-  FN.fortnite.currentLoadout.emote = query
-  return await respond(FM.friend.id, i18next.t('msg_emotechanged', { ns: 'bot', lng, emote: displayName }))
+  await FN.party.me.setEmote(query)
+  FN.currentLoadout.emote = query
+  return await reply(i18next.t('msg_emotechanged', { ns: 'bot', lng, emote: displayName }))
 }
 
 exports.ownerOnly = false
