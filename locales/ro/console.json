@@ -1,7 +1,7 @@
 {
     "initiating": "Inițiere...",
     "initiating_fail": "Nu se poate iniția Epic Games Launcher-ul. Poate serverele Epic Games sunt offline?",
-    "generating_auth": "A window will now pop up. Login and enter the value of redirectUrl.\nIf you can't use a browser on your platform, you can find help on this projects GitHub.",
+    "generating_auth": "O fereastră va apărea acum. Autentifică-te și introdu valoarea redirectUrl.\nDacă nu poți folosi un browser pe platforma ta, poți găsi ajutor pe GitHub-ul acestui proiect.",
     "login": {
         "message": "Autentificare...",
         "success": "Autentificat ca {{username}} (ID: {{account_id}})."
