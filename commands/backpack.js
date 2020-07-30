@@ -21,6 +21,10 @@ exports.run = async (FM, args, reply, lng, FN) => {
 
   await FN.party.me.setBackpack(query)
   FN.currentLoadout.backpack = query
+  if (FN.currentLoadout.emote) {
+    await FN.party.me.clearEmote()
+    await FN.party.me.setEmote(FN.currentLoadout.emote)
+  };
   return await reply(i18next.t('msg_bpchanged', { ns: 'bot', lng, backpack: displayName }))
 }
 
