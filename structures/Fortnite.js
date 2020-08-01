@@ -1,4 +1,4 @@
-const { Client } = require('fnbr')
+const { Client, Enums } = require('fnbr')
 const fetch = require('node-fetch')
 const { prompt } = require('inquirer')
 const opn = require('opn')
@@ -62,6 +62,9 @@ exports.init = async function (options) {
   } catch (error) {
     console.log('[Error] ' + i18next.t('Fortnite.login_failed', { ns: 'errors', lng: options.preferred_language }))
     return process.exit(1)
+  };
+  if (options.bot.party_privacy && Enums.PartyPrivacy[options.bot.party_privacy.toUpperCase()]) {
+    client.party.setPrivacy(Enums.PartyPrivacy[options.bot.party_privacy.toUpperCase()])
   };
   if (options.bot.acceptallfriends) {
     for (const Request of client.pendingFriends.filter(request => request.direction === 'INCOMING').toArray()) {

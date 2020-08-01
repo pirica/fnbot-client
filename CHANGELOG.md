@@ -1,10 +1,23 @@
 # fnbot-client - Changelogs
 
+## Version 1.3.1
+
+### New
+
+- Added `pickaxe` command - Allows you to change the bots pickaxe
+- Added `clone` command - Clones your loadout onto the bot
+- Added `level` command - Changes the bots displayed level
+
+### Updated
+
+- (fixed) Emote stopped when changing backpacks.
+- Some issues with parties fixed
+
 ## Version 1.3
 
 - Using [fnbr.js](https://fnbr.js.org/) instead of `epicgames-client` and `epicgames-fortnite-client`. (New library that is up to date)
 - Commands can now be used in party chat
-- Fixed some issues
+- Fixed some issues related to party invitations
 - Login reworked. You'll now have to use a link one time to login. After that, device auth will be used to login.
 - Build information is no longer used. The cosmetics API is still used to search cosmetics.
 - Some minor changes to improve performance and quality
