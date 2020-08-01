@@ -17,7 +17,7 @@
         "success": "Trimitere cu succes a unei cereri de prietenie către {{username}}."
     },
     "rmvfriend": {
-        "error": "Nu s-a putut elimina utilizatorul.",
+        "error": "Nu s-a putut elimina prietenul.",
         "not_friended": "Nu sunt prieten cu acest utilizator.",
         "success": "{{username}} a fost eliminat cu succes."
     },
