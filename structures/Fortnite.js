@@ -63,7 +63,7 @@ exports.init = async function (options) {
     console.log('[Error] ' + i18next.t('Fortnite.login_failed', { ns: 'errors', lng: options.preferred_language }))
     return process.exit(1)
   };
-  if (options.bot.party_privacy && Enums.PartyPrivacy[options.bot.party_privacy.toUpperCase()]) {
+  if (options.bot.party_privacy && options.bot.party_privacy.toUpperCase() !== 'PUBLIC' && Enums.PartyPrivacy[options.bot.party_privacy.toUpperCase()]) {
     client.party.setPrivacy(Enums.PartyPrivacy[options.bot.party_privacy.toUpperCase()])
   };
   if (options.bot.acceptallfriends) {
