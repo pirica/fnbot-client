@@ -41,7 +41,8 @@ const LocalizationNames = {
   it: 'Italian',
   fr: 'French',
   ro: 'Romanian',
-  ar: 'Arabic'
+  ar: 'Arabic',
+  ru: 'Russian'
 }
 
 prompt([{
